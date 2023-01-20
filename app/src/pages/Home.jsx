@@ -1,11 +1,12 @@
-
+import HeaderComponent from "../Components/HeaderComponent/HeaderComponent";
 
 function Home(){
 
     return(
         <>
-            Dashboard teste
+            <HeaderComponent/>
         </>
+        
     )
 }
 
