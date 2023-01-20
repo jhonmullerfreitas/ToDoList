@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    background: linear-gradient(180deg, #303C73 46.87%, rgba(74 86 145 / 88%) 99.96%, rgba(48, 60, 115, 0.431818) 99.97%, rgba(48, 60, 115, 0.431818) 99.98%, #303C73 99.99%, rgba(48, 60, 115, 0) 100%);
+
+    filter: drop-shadow(0px 4px 4px rgba(48, 60, 115, 0.5));
+}
+
+.logo-small{
+    margin-left: 20px;
+}
+.detailHover:hover{
+    cursor: pointer;
+}
+
+.menuHeader{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 10px;
+    width: 55vw;
+    color: #FFFFFF;
+}
+
+.menuHeaderOptions{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40vw;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+}
+
+.logOutImg{
+    height: 20px;
+    width: 20px;
+}
+
+/******************/
+
+.login-signup{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50vw;
+    list-style: none;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+@media(min-width: 425px){
+    .menuHeader{
+        width: 45vw;
+    }
+
+    .login-signup{
+        width: 35vw;
+    }
+}
+
+@media(min-width: 768px){
+    .menuHeader{
+        width: 40vw;
+    }
+
+    .menuHeaderOptions{
+        width: 30vw;
+    }
+
+    .login-signup{
+        width: 25vw;
+    }
+}
+
+@media(min-width: 1024px){
+    .menuHeader{
+        width: 25vw;
+    }
+
+    .menuHeaderOptions{
+        width: 20vw;
+        font-size: 20px;
+    }
+
+    .logOutImg{
+        height: 30px;
+        width: 30px;
+    }
+
+    .login-signup{
+        width: 20vw;
+        font-size: 20px;
+    }
+}

@@ -8,9 +8,6 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
     list-style: none;
   }
-  html {
-    scroll-behavior: smooth;
-  }
   a {
     text-decoration: none;
   }
