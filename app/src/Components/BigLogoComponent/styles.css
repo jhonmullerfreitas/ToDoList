@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container-logo{
+    display: none;
+}
+
+@media(min-width: 768px){
+    .container-logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        height: 100%;
+        width: 50%;
+    
+        background-color: #303C73;
+    }
+}
