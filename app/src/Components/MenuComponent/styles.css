@@ -1,0 +1,42 @@
+.menuLateral {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 40vw;
+  height: 100vh;
+
+  background-color: #303c73;
+}
+
+.menuLateral-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 25vh;
+
+  margin-top: 10px;
+}
+
+.menuLateral-logout {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 425px) {
+  .menuLateral {
+    width: 35vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .menuLateral {
+    width: 25vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menuLateral {
+    width: 15vw;
+  }
+}

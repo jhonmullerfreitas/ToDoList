@@ -1,5 +1,5 @@
 import AppRoutes from "./routes";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "@mui/material";
 import { theme } from "./styles/pallete"
 
 
