@@ -1,4 +1,4 @@
-import HeaderComponent from "../Components/HeaderComponent/HeaderComponent";
+import HeaderComponent from "../Components/HeaderComponent/index.jsx";
 
 function Home(){
 
