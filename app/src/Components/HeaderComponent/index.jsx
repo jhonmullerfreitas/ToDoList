@@ -1,49 +1,39 @@
-import "./style.css"
-
-import logoTodoSmall from "./../../Assets/logo-todo-small.png"
-import logOut from "./../../Assets/log-out.png"
+import { ContainerHeader, 
+    ImgLogo, 
+    MenuHeaderUserLogged, 
+    MenuHeaderUserNotLogged 
+} from "./styles";
 
 import { useState } from "react";
-import MenuLateral from "../MenuComponent";
+
+import smalLogo from "../../Assets/logo-todo-small.png"
+import logoutIcon from "../../Assets/log-out.png"
 
 function HeaderComponent(){
 
-    const [loggedInUser, setLoggedInUser] = useState(false)
- 
+    const [loggedUser, setLoggedUser] = useState(true)
+
     return(
-        <>
-            <div className="header">
-                <div className="logo-small detailHover">
-                    <img src={logoTodoSmall} alt="" />
-                </div>
+        <ContainerHeader>
+            <ImgLogo src={smalLogo} />
 
-                {
-                    loggedInUser ?
-                    <div className="menuHeader">
-                        <ul className="menuHeaderOptions">
-                            <li className=" detailHover">Home</li>
-                            <li className=" detailHover">Listas</li>
-                        </ul>
-
-                        <div>
-                            <img className="logOutImg detailHover" src={logOut} alt="" />
-                        </div>
-                    </div>
-                    :
-                    <ul className="login-signup ">
-                        <li className="detailHover">Login</li>
-                        <li className="detailHover">Cadastrar</li>
-                    </ul>
-                }
-            </div>
-        
             {
-                loggedInUser ?
-                <MenuLateral/>
-                : <div></div>
+                loggedUser?
+                <MenuHeaderUserLogged>
+                    <ul>
+                        <li>Home</li>
+                        <li>Listas</li>
+                    </ul>
+
+                    <img src={logoutIcon}/>
+                </MenuHeaderUserLogged>
+                :
+                <MenuHeaderUserNotLogged>
+                    <li>Login</li>
+                    <li>Cadastrar</li>
+                </MenuHeaderUserNotLogged>
             }
-        
-        </>
+        </ContainerHeader>
     )
 }
 
