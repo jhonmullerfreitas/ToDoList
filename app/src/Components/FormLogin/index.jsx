@@ -14,7 +14,6 @@ function FormLogin(){
                 <ButtonLogin>
                     Entrar
                 </ButtonLogin>
-                
             </FormLoginInputs>
 
         </BoxFormLogin>
