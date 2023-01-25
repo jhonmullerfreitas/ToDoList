@@ -12,15 +12,15 @@ import MenuLateral from "../MenuComponent";
 
 function HeaderComponent(){
 
-    const [loggedUser, setLoggedUser] = useState(true)
+    const [loggedUser, setLoggedUser] = useState(false)
 
     return(
         <>
+        {
+            loggedUser?
+            <>
             <ContainerHeader>
                 <ImgLogo src={smalLogo} />
-
-                {
-                    loggedUser?
                     <MenuHeaderUserLogged>
                         <ul>
                             <li>Home</li>
@@ -29,14 +29,18 @@ function HeaderComponent(){
 
                         <img src={logoutIcon}/>
                     </MenuHeaderUserLogged>
-                    :
-                    <MenuHeaderUserNotLogged>
-                        <li>Login</li>
-                        <li>Cadastrar</li>
-                    </MenuHeaderUserNotLogged>
-                }
             </ContainerHeader>
             <MenuLateral/>
+            </>
+            :
+            <ContainerHeader>
+                <ImgLogo src={smalLogo} />
+                <MenuHeaderUserNotLogged>
+                    <li>Login</li>
+                    <li>Cadastrar</li>
+                </MenuHeaderUserNotLogged>
+            </ContainerHeader>
+        }
         </>
     )
 }
