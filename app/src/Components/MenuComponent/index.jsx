@@ -1,8 +1,8 @@
-import { Drawer, IconButton } from "@mui/material"
-import MenuIcon from "@mui/icons-material/Menu"
 import { useState } from "react"
-import "./styles.css"
-import OptionMenuComponent from "../OptionMenuComponent/index ";
+import { Drawer, IconButton } from "@mui/material"
+import { BoxMenuLateral, OptionsMenuLateral } from "./styles";
+import MenuIcon from "@mui/icons-material/Menu"
+import OptionMenuComponent from "../OptionMenuComponent";
 
 function MenuLateral(){
 
@@ -10,7 +10,7 @@ function MenuLateral(){
 
     return(
         <>
-        <IconButton 
+            <IconButton 
                 size="large" 
                 edge="start" 
                 color='inherit' 
@@ -22,7 +22,6 @@ function MenuLateral(){
                 }}
             >
                 <MenuIcon 
-                    
                     sx={{
                         height: '7vh',
                         width:{
@@ -33,8 +32,8 @@ function MenuLateral(){
                         },
                         borderBottomRightRadius: '5px',
                         padding: 0,
-                        color: '#FFFFFF', 
-                        backgroundColor: 'blue.menuLateral'
+                        color: 'var(--white)', 
+                        backgroundColor: 'var(--blue)'
                     }} 
                 />
             </IconButton>
@@ -42,19 +41,16 @@ function MenuLateral(){
                 anchor="left"
                 open={drawerOpen}
                 onClose={() => setDrawerOpen(false)}
-                
             >
-                <div className="menuLateral">
-                    <div className="menuLateral-options">
+                <BoxMenuLateral>
+                    <OptionsMenuLateral>
                         <OptionMenuComponent option={"Perfil"} />
                         <OptionMenuComponent option={"Criar Lista"} />
                         <OptionMenuComponent option={"Todas as Listas"} />
-                    </div>
+                    </OptionsMenuLateral>
 
-                    <div className="menuLateral-logout">
-                        <OptionMenuComponent option={"Sair"} />
-                    </div>
-                </div>
+                    <OptionMenuComponent option={"Sair"} />
+                </BoxMenuLateral>
             </Drawer>
         </>
     )

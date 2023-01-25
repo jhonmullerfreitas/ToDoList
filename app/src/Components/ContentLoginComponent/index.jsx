@@ -1,14 +1,16 @@
-import "./styles.css"
-import BigLogoComponent from "../BigLogoComponent/index"
 import FormLogin from "../FormLogin";
+import { BoxBigLogo, BoxContentLogin } from "./styles";
+import BigLogoImg from "../../Assets/logo-todo-big.png"
 
 function ContentLoginComponent(){
 
     return(
-        <div className="content-login">
-            <BigLogoComponent/>
+        <BoxContentLogin>
+            <BoxBigLogo>
+                <img src={BigLogoImg}/>
+            </BoxBigLogo>
             <FormLogin/>
-        </div>
+        </BoxContentLogin>
     )
 }
 
