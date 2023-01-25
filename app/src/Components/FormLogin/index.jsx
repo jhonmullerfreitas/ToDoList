@@ -1,31 +1,23 @@
-import "./styles.css"
 import TextField from '@mui/material/TextField';
+import { BoxFormLogin, ButtonLogin, FormLoginInputs } from './styles';
 
 function FormLogin(){
 
     return(
-        <div className="content-login-form">
-            <h3>Login</h3>
+        <BoxFormLogin>
+            <h2>Login</h2>
 
-            <form className="login-form">
-                {/* <div>
-                    <p>Email</p>
-                    <input placeholder="Digite seu email" />
-                </div> */}
-                <TextField
-                    
-                />
+            <FormLoginInputs>
+                <TextField label='Email' size='small' />
+                <TextField label='Senha' size='small' />
+                
+                <ButtonLogin>
+                    Entrar
+                </ButtonLogin>
+                
+            </FormLoginInputs>
 
-                <div>
-                    <p>Senha</p>
-                    <input type="text" placeholder="Digite sua senha" />
-                </div>
-
-                <p>Criar conta</p>
-
-                <button>Entrar</button>
-            </form>
-        </div>
+        </BoxFormLogin>
     )
 }
 
