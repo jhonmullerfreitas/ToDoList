@@ -1,11 +1,11 @@
-import "./styles.css"
+import { OptionMenuLateral } from "./styles";
 
 function OptionMenuComponent(props){
 
     return(
-        <button className="button-option-menu">
+        <OptionMenuLateral>
             {props.option}
-        </button>
+        </OptionMenuLateral>
     )
 }
 
