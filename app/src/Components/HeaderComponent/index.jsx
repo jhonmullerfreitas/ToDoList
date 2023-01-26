@@ -12,7 +12,7 @@ import MenuLateral from "../MenuComponent";
 
 function HeaderComponent(){
 
-    const [loggedUser, setLoggedUser] = useState(false)
+    const [loggedUser, setLoggedUser] = useState(true)
 
     return(
         <>
