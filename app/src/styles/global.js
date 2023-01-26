@@ -21,6 +21,8 @@ export default createGlobalStyle`
     --boxShadowHeader: drop-shadow(0px 4px 4px rgba(48, 60, 115, 0.5));
     --blue: #303C73;
     --blue-2: #505c94;
+    --blue-card: #4f5b92;
+    --blue-detail-list: #BAC1E4;
     --colorHover: #a29696;
   }
 `;
