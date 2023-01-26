@@ -1,7 +1,11 @@
+import ContentNewListComponent from "../Components/ContentNewListComponent";
+import HeaderComponent from "../Components/HeaderComponent";
+
 function NewList(){
     return(
         <>
-            Nova Lista
+            <HeaderComponent/>
+            <ContentNewListComponent/>
         </>
     )
 }
