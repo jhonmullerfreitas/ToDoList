@@ -1,9 +1,11 @@
-
+import ContentAllListsComponent from "../Components/ContentAllListsComponent";
+import HeaderComponent from "../Components/HeaderComponent";
 
 function AllLists(){
     return(
         <>
-            Todas as Listas
+            <HeaderComponent/>
+            <ContentAllListsComponent/>
         </>
     )
 }
