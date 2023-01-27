@@ -11,7 +11,8 @@ export class ListService {
 
         const newList = {
             id: uuidv4(),
-            name
+            name,
+            items: [],
         }
 
         lists.push(newList);
