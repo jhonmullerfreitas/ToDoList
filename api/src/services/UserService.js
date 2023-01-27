@@ -2,7 +2,6 @@ import users from "../database/user"
 import {v4 as uuidv4} from "uuid"
 
 export class UserService {
-
     static create = (email, password) =>{
         const userExists = users.find((user)=>user.email === email);
         if(userExists){
