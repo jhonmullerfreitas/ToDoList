@@ -6,6 +6,7 @@ import { ItemController } from "../controllers/ItemController";
 const routes = Router()
 
 routes.post("/users", UserController.create);
+routes.post("/users/login", UserController.loginUser)
 routes.get("/users", UserController.readAll);
 routes.patch("/users/:id", UserController.updateUser);
 routes.delete("/users/:id", UserController.deleteUser);

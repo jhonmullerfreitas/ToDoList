@@ -1,8 +1,8 @@
 import { UserService } from "../services/UserService"
 export class UserController {
-    static create = (request, response) => {
+    static create = async (request, response) => {
         const {email, password} = request.body;
-        const user = UserService.create(email, password);
+        const user = await UserService.create(email, password);
         return response.json(user);
     }
     static readAll = (request, response) => {
@@ -19,5 +19,13 @@ export class UserController {
         const {id} = request.params;
         const userDeleted = UserService.deleteUser(id);
         return response.json(userDeleted);
+    }
+
+    static loginUser = (request, response) => {
+        const {email, password} = request.body
+
+        const userLogin = UserService.loginUser(email, password)
+
+        return response.json(userLogin);
     }
 }
