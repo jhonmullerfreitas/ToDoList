@@ -9,10 +9,10 @@ export class UserController {
         const users = UserService.readAll();
         return response.json(users);
     }
-    static updateUser = (request, response) => {
+    static updateUser = async (request, response) => {
         const {id} = request.params;
         const {email, password} = request.body;
-        const userUpdate = UserService.updateUser(id, email, password);
+        const userUpdate = await UserService.updateUser(id, email, password);
         return response.json(userUpdate);
     }
     static deleteUser = (request, response) => {
