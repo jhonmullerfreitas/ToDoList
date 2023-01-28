@@ -18,16 +18,13 @@ export class ListController {
     static updateList = (request, response) => {
         const {id} = request.params
         const {name} = request.body
-        const token = request.headers.authorization
-        const listUpdated = ListService.updateList(id, name, token)
+        const listUpdated = ListService.updateList(id, name)
         return response.json(listUpdated)
     }
 
     static deleteList = (request, response) => {
         const {id} = request.params
-        const token = request.headers.authorization
-        const listDeleted = ListService.deleteList(id, token)
+        const listDeleted = ListService.deleteList(id)
         return response.json(listDeleted)
     }
-
 }

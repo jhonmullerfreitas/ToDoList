@@ -1,12 +1,35 @@
 import { Router } from "express";
 import {ListController} from "../controllers/ListController"
+import { MiddlewareUtils } from "../middlewares";
 
 const routes = Router();
 
 export const listRoutes = () => {
-    routes.post("", ListController.create);
-    routes.get("", ListController.readAll);
-    routes.patch("/:id", ListController.updateList);
-    routes.delete("/:id", ListController.deleteList);
+    routes.post(
+        "", 
+        MiddlewareUtils.verifyUserAuth, 
+        ListController.create
+    );
+
+    routes.get(
+        "", 
+        MiddlewareUtils.verifyUserAuth, 
+        ListController.readAll
+    );
+
+    routes.patch(
+        "/:id", 
+        MiddlewareUtils.verifyUserAuth, 
+        MiddlewareUtils.verifyUserAuthorizationList , 
+        ListController.updateList
+    );
+
+    routes.delete(
+        "/:id", 
+        MiddlewareUtils.verifyUserAuth, 
+        MiddlewareUtils.verifyUserAuthorizationList,
+        ListController.deleteList
+    );
+
     return routes;
 }
