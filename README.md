@@ -6,6 +6,7 @@
 ## Tecnologias utilizadas:
 - ReactJS
 - JavaScript
+- Material UI (MUI)
 
 ## Clone:
 - Você pode realizar o clone deste repositório contendo a aplicação completa através do comando `$ git clone https://github.com/jhonmullerfreitas/ToDoList.git`
@@ -25,7 +26,6 @@
 - Express
 - JavaScript
 - Axios
-- Material UI (MUI)
 
 ## Clone:
 - Você pode realizar o clone deste repositório contendo a aplicação completa através do comando `$ git clone https://github.com/jhonmullerfreitas/ToDoList.git`
