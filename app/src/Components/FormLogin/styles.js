@@ -28,6 +28,12 @@ export const FormLoginInputs = styled.form`
     height: 35vh;
 `;
 
+export const SpanError = styled.span`
+    color: red;
+    font-size: 14px;
+
+`;
+
 export const ButtonLogin = styled.button`
     height: 5vh;
     width: 20vw;
