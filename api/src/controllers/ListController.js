@@ -1,7 +1,6 @@
 import { ListService } from "../services/ListService";
 
 export class ListController {
-
     static create = (request, response) => {
         const {name} = request.body
         const token = request.headers.authorization
@@ -13,6 +12,13 @@ export class ListController {
         const token = request.headers.authorization
         const lists = ListService.readAll(token)
         return response.json(lists)
+    }
+
+    static detailList = (request, response) => {
+        const token = request.headers.authorization
+        const {id} = request.params
+        const list = ListService.detailList(token, id)
+        return response.json(list)
     }
 
     static updateList = (request, response) => {

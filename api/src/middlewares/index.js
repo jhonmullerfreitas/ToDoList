@@ -3,7 +3,6 @@ import lists from "../database/list";
 import jwt from "jsonwebtoken"
 
 export class MiddlewareUtils {
-
     static verifyEmail = (request, response, next) => {
         const {email} = request.body;
         const emailExists = users.find((user)=> user.email === email);

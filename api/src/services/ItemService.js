@@ -9,7 +9,7 @@ export class ItemService {
             idItem: uuidv4(),
             done: false
         }
-        lists[listIndex].items.push(newItem)
+        lists[listIndex].items.unshift(newItem)
         return lists[listIndex];
     }
 
