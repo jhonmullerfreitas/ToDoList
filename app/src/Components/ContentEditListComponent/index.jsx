@@ -1,5 +1,4 @@
 import { AddItemInput, BoxInput, BoxItens, BoxList, ButtonAddItem, HeaderList} from "./styles";
-import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from '@mui/icons-material/Add';
 import ItemList from "../ItemList";
 import axios from "axios"
@@ -8,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from 'yup';
+import ModalEditList from "../ModalEditList";
 
 function ContentEditListComponent(){
 
@@ -23,7 +23,6 @@ function ContentEditListComponent(){
 
     const [list, setList] = useState([])
     const [items, setItems] = useState([])
-    const [addItem, setAddItem] = useState("")
     const token = window.localStorage.getItem("@token")
 
     useEffect(()=>{
@@ -63,7 +62,7 @@ function ContentEditListComponent(){
             <h3>Lista</h3>
             <HeaderList>
                 <p>{list.name}</p>
-                <EditIcon fontSize='small' />
+                <ModalEditList/>
             </HeaderList>
 
             <BoxInput onSubmit={handleSubmit(addItemFunction)} >
@@ -74,7 +73,7 @@ function ContentEditListComponent(){
             <BoxItens>
                 {
                     ItemList ? 
-                    items.map((item)=><ItemList nameItem={item.nameItem} key={item.idItem} />)
+                    items.map((item)=><ItemList nameItem={item.nameItem} key={item.idItem} idItem={item.idItem} />)
                     : <></>
                 }
             
