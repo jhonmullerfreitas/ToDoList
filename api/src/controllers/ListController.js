@@ -1,7 +1,6 @@
 import { ListService } from "../services/ListService";
 
 export class ListController {
-
     static create = (request, response) => {
         const {name} = request.body
         const token = request.headers.authorization
