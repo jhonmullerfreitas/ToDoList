@@ -3,7 +3,7 @@ export class UserController {
     static create = async (request, response) => {
         const {email, password} = request.body;
         const user = await UserService.create(email, password);
-        return response.json(user);
+        return response.status(201).json(user);  
     }
     static readAll = (request, response) => {
         const users = UserService.readAll();
@@ -22,10 +22,17 @@ export class UserController {
     }
 
     static loginUser = (request, response) => {
-        const {email, password} = request.body
-
-        const userLogin = UserService.loginUser(email, password)
-
-        return response.json(userLogin);
+        try {
+            const {email, password} = request.body
+            const userLogin = UserService.loginUser(email, password)
+            return response.status(200).json(userLogin);
+        } catch (err) {
+            if(err instanceof Error){
+                return response.status(401).send({
+                    error: err.name,
+                    message: err.message
+                });
+            }
+        }
     }
 }

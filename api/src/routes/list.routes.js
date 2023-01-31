@@ -12,6 +12,12 @@ export const listRoutes = () => {
     );
 
     routes.get(
+        "/:id",
+        MiddlewareUtils.verifyUserAuth,
+        ListController.detailList
+    )
+
+    routes.get(
         "", 
         MiddlewareUtils.verifyUserAuth, 
         ListController.readAll

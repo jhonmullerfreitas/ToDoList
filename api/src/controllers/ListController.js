@@ -15,6 +15,13 @@ export class ListController {
         return response.json(lists)
     }
 
+    static detailList = (request, response) => {
+        const token = request.headers.authorization
+        const {id} = request.params
+        const list = ListService.detailList(token, id)
+        return response.json(list)
+    }
+
     static updateList = (request, response) => {
         const {id} = request.params
         const {name} = request.body
