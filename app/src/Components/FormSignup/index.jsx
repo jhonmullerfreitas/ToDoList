@@ -29,7 +29,7 @@ function FormSignup(){
             toast("Cadastro realizado. Redirecionando...")
             setTimeout(() => {
                 setUserLogged(true)
-                navigate("/login")
+                navigate("/")
             }, "2000")
         })
         .catch((error)=> toast(`${error.response.data.message}`))
