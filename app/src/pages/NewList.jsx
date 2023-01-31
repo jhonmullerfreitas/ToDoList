@@ -1,13 +1,13 @@
-import ContentNewListComponent from "../Components/ContentNewListComponent";
+import FormNewList from "../Components/FormNewList";
 import HeaderComponent from "../Components/HeaderComponent";
 
-function NewList(){
-    return(
-        <>
-            <HeaderComponent/>
-            <ContentNewListComponent/>
-        </>
-    )
+function NewList() {
+  return (
+    <>
+      <HeaderComponent />
+      <FormNewList />
+    </>
+  );
 }
 
 export default NewList;
