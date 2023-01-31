@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from 'yup';
-import axios from "axios";
+import api from '../../Services/api';
 
 import {useNavigate} from "react-router-dom"
 
@@ -22,8 +22,8 @@ function FormNewList(){
     const navigate = useNavigate()
 
     const createList = (data) => {
-        axios.post(
-            "http://localhost:3001/list",
+        api.post(
+            "/list",
             data,
             {
                 headers:{
@@ -32,7 +32,6 @@ function FormNewList(){
             }
         )
         .then((res)=>{
-            console.log(res)
             window.localStorage.setItem("@idListDetail", res.data.id)
             navigate("/edit-list")
         })

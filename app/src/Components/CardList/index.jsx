@@ -1,5 +1,5 @@
 import { BoxCard, ButtonDelete, ButtonDetail, OptionsCard, TitleList } from "./styles";
-import axios from "axios"
+import api from '../../Services/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {useNavigate} from "react-router-dom"
@@ -10,7 +10,7 @@ function CardList(props){
     const navigate = useNavigate()
 
     const deleteList = (idList) => {
-        axios.delete(`http://localhost:3001/list/${idList}`, {
+        api.delete(`/list/${idList}`, {
             headers:{
                 'Authorization':`Bearer ${token}`
             }

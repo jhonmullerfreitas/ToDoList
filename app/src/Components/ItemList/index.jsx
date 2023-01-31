@@ -3,7 +3,7 @@ import Checkbox from '@mui/material/Checkbox';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useState } from "react";
 import ModalEditItem from "../ModalEditItem"
-import axios from "axios"
+import api from '../../Services/api';
 
 function ItemList(props){
 
@@ -13,7 +13,7 @@ function ItemList(props){
 
     useEffect(()=>{
         const data = {idItem: props.idItem}
-        axios.put(`http://localhost:3001/item/${idList}`,
+        api.put(`/item/${idList}`,
             data,
             {
                 headers:{
@@ -22,7 +22,6 @@ function ItemList(props){
             } 
         )
         .then((res)=> {
-            console.log(res)
             setDone(res.data.done)
         })
         .catch((error)=> console.log(error))
@@ -30,7 +29,7 @@ function ItemList(props){
 
     const doneFunction = () =>{
         const data = {idItem: props.idItem}
-        axios.put(`http://localhost:3001/item/${idList}`,
+        api.put(`/item/${idList}`,
             data,
             {
                 headers:{
@@ -39,7 +38,6 @@ function ItemList(props){
             } 
         )
         .then((res)=> {
-            console.log(res)
             setDone(res.data.done)
         })
         .catch((error)=> console.log(error))
@@ -54,7 +52,7 @@ function ItemList(props){
                 idItem: id,
             } 
         }
-        axios.delete(`http://localhost:3001/item/${idList}`, config)
+        api.delete(`/item/${idList}`, config)
         .then((res)=> console.log(res))
         .catch((error)=>console.log(error))
     }

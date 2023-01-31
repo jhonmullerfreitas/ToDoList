@@ -2,7 +2,7 @@ import CardList from "../CardList";
 import { BoxContentLists, NewListButton, TitlePage, VoidList } from "./styles";
 import { useEffect, useState } from "react";
 import {useNavigate} from "react-router-dom"
-import axios from "axios"
+import api from '../../Services/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,7 +13,7 @@ function ContentAllListsComponent(){
     const navigate = useNavigate()
 
     useEffect(()=>{
-        axios.get("http://localhost:3001/list", {
+        api.get("/list", {
             headers:{
                 'Authorization':`Bearer ${token}`
             }

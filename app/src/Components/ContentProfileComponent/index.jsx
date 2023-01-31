@@ -1,4 +1,4 @@
-import axios from "axios"
+import api from '../../Services/api';
 
 import { useEffect, useState } from "react";
 import { BoxProfile, ButtonEditEmail, FormEditEmail } from "./styles";
@@ -25,8 +25,8 @@ function ContentProfileComponent(){
 
     const editEmail = (data) => {
 
-        axios.patch(
-            `http://localhost:3001/user/${idUser}`,
+        api.patch(
+            `user/${idUser}`,
             data,
             {
                 headers: {
@@ -42,7 +42,7 @@ function ContentProfileComponent(){
     }
 
     useEffect(()=>{
-        axios.get(`http://localhost:3001/user/${idUser}`, 
+        api.get(`/user/${idUser}`, 
             {
                 headers: {
                     'Authorization':`Bearer ${token}`

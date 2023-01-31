@@ -10,7 +10,7 @@ import TextField from '@mui/material/TextField';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from 'yup';
-import axios from "axios"
+import api from '../../Services/api';
 
 const style = {
   position: 'absolute',
@@ -44,7 +44,7 @@ function ModalEditList() {
     const idList = window.localStorage.getItem("@idListDetail")
 
     const editName = (data) => {
-        axios.patch(`http://localhost:3001/list/${idList}`, 
+        api.patch(`/list/${idList}`, 
             data, 
             {
             headers:{

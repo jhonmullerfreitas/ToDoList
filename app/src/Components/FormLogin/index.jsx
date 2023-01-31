@@ -3,10 +3,10 @@ import { BoxFormLogin, ButtonLogin, FormLoginInputs, SpanError } from './styles'
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from 'yup';
-import axios from "axios";
+
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom"
-
+import api from '../../Services/api';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -24,8 +24,8 @@ function FormLogin(){
     });
 
     const onSubmit = (data) => {
-        axios.post(
-            "http://localhost:3001/user/login",
+        api.post(
+            "/user/login",
             data
         ).then((res)=>{
             toast("Login realizado com sucesso.")

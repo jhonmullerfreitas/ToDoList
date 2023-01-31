@@ -1,7 +1,7 @@
 import { AddItemInput, BoxInput, BoxItens, BoxList, ButtonAddItem, HeaderList} from "./styles";
 import AddIcon from '@mui/icons-material/Add';
 import ItemList from "../ItemList";
-import axios from "axios"
+import api from '../../Services/api';
 import { useEffect, useState } from "react";
 
 import { useForm } from "react-hook-form";
@@ -26,7 +26,7 @@ function ContentEditListComponent(){
     const token = window.localStorage.getItem("@token")
 
     useEffect(()=>{
-        axios.get(`http://localhost:3001/list/${idList}`, {
+        api.get(`/list/${idList}`, {
             headers:{
                 'Authorization': `Bearer ${token}`
             }
@@ -41,8 +41,8 @@ function ContentEditListComponent(){
     }, [list])
 
     const addItemFunction = (data) =>{
-        axios.post(
-            `http://localhost:3001/item/${idList}`,
+        api.post(
+            `/item/${idList}`,
             data
             ,{
                 headers:{
@@ -50,7 +50,7 @@ function ContentEditListComponent(){
                 }
             }
         ).then((res)=>{
-           console.log(res)
+        //    console.log(res)
         })
         .catch((error)=>{
             console.log(error)
