@@ -5,6 +5,13 @@ export class UserController {
         const user = await UserService.create(email, password);
         return response.status(201).json(user);  
     }
+
+    static userDetail = (request, response) => {
+        const {id} = request.params
+        const user = UserService.userDetail(id);
+        return response.status(200).json(user)
+    }
+
     static readAll = (request, response) => {
         const users = UserService.readAll();
         return response.json(users);

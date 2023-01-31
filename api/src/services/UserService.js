@@ -17,6 +17,11 @@ export class UserService {
         return newUser;
     } 
 
+    static userDetail = (id) => {
+        const user = users.find((user)=> user.id === id);
+        return user;
+    }
+
     static readAll = () => {
         return users;
     }
