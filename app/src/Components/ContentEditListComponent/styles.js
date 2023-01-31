@@ -32,7 +32,7 @@ export const HeaderList = styled.div`
     }
 `;
 
-export const BoxInput = styled.div`
+export const BoxInput = styled.form`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,4 +59,10 @@ export const BoxItens = styled.ul`
 
     overflow-y: auto;
     margin-top: 10px;
+`;
+
+export const ButtonAddItem = styled.button`
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: var(--blue);
 `;

@@ -3,10 +3,17 @@ import { Drawer, IconButton } from "@mui/material"
 import { BoxMenuLateral, OptionsMenuLateral } from "./styles";
 import MenuIcon from "@mui/icons-material/Menu"
 import OptionMenuComponent from "../OptionMenuComponent";
+import {useNavigate} from "react-router-dom"
 
 function MenuLateral(){
 
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const navigate = useNavigate()
+
+    const logout = () =>{
+        window.localStorage.clear()
+        navigate("/login")
+    }
 
     return(
         <>
@@ -45,12 +52,12 @@ function MenuLateral(){
             >
                 <BoxMenuLateral>
                     <OptionsMenuLateral>
-                        <OptionMenuComponent option={"Perfil"} />
-                        <OptionMenuComponent option={"Criar Lista"} />
-                        <OptionMenuComponent option={"Todas as Listas"} />
+                        <OptionMenuComponent option={"Perfil"} page={"/profile"} />
+                        <OptionMenuComponent option={"Criar Lista"} page={"/new-list"}/>
+                        <OptionMenuComponent option={"Todas as Listas"}  page={"/all-lists"}/>
                     </OptionsMenuLateral>
 
-                    <OptionMenuComponent option={"Sair"} />
+                    <OptionMenuComponent option={"Sair"} page={"/login"} />
                 </BoxMenuLateral>
             </Drawer>
         </>

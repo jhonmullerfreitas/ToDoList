@@ -17,6 +17,11 @@ export class UserService {
         return newUser;
     } 
 
+    static userDetail = (id) => {
+        const user = users.find((user)=> user.id === id);
+        return user;
+    }
+
     static readAll = () => {
         return users;
     }
@@ -44,13 +49,13 @@ export class UserService {
 
         const user = users.find((user)=> user.email === email);
         if(!user){
-            return "Email ou senha inválidos."
+            throw new Error("Email ou senha inválidos.");
         }
 
         const passwordMatch = bcrypt.compareSync(password, user.password)
 
         if(!passwordMatch){
-            return "Email ou senha inválidos."
+            throw new Error("Email ou senha inválidos.");
         }
 
         const token = jwt.sign({email: user.email, idUser: user.id}, "SECRET_KEY", {expiresIn: "1h"})

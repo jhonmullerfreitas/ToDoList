@@ -23,6 +23,15 @@ export class ListService {
         return listsUser
     }
 
+    static detailList = (token, idList) => {
+        token = token.split(" ")[1]
+        const decode = jwt.verify(token, "SECRET_KEY")
+        const listsUser = lists.filter((list) => list.idUser === decode.idUser)
+        const list = listsUser.find((item)=> item.id === idList)
+
+        return list
+    }
+
     static updateList = (id, name) =>{
         const listIndex = lists.findIndex(list => list.id === id)
         const listUpdate = {

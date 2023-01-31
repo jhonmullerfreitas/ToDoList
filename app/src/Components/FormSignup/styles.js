@@ -28,6 +28,11 @@ export const FormSignupInputs = styled.form`
     height: 45vh;
 `;
 
+export const SpanError = styled.span`
+    color: red;
+    font-size: 14px;
+`;
+
 export const ButtonSignup = styled.button`
     height: 5vh;
     width: 25vw;
