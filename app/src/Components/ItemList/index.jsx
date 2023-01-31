@@ -1,7 +1,7 @@
 import { BoxItem, NameItem } from "./styles";
 import Checkbox from '@mui/material/Checkbox';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalEditItem from "../ModalEditItem"
 import axios from "axios"
 
@@ -10,6 +10,40 @@ function ItemList(props){
     const [done, setDone] = useState(false)
     const idList = window.localStorage.getItem("@idListDetail")
     const token = window.localStorage.getItem("@token")
+
+    useEffect(()=>{
+        const data = {idItem: props.idItem}
+        axios.put(`http://localhost:3001/item/${idList}`,
+            data,
+            {
+                headers:{
+                    'Authorization':`Bearer ${token}`
+                }
+            } 
+        )
+        .then((res)=> {
+            console.log(res)
+            setDone(res.data.done)
+        })
+        .catch((error)=> console.log(error))
+    },[])
+
+    const doneFunction = () =>{
+        const data = {idItem: props.idItem}
+        axios.put(`http://localhost:3001/item/${idList}`,
+            data,
+            {
+                headers:{
+                    'Authorization':`Bearer ${token}`
+                }
+            } 
+        )
+        .then((res)=> {
+            console.log(res)
+            setDone(res.data.done)
+        })
+        .catch((error)=> console.log(error))
+    }
 
     const deleteItem = (id) =>{
         let config = {
@@ -30,9 +64,7 @@ function ItemList(props){
             <Checkbox 
                 checked={done}
                 color="success" 
-                onChange={function(e){
-                    setDone(e.target.checked)
-                }}
+                onClick={()=>doneFunction()}
             />
 
             <NameItem done={done} >{props.nameItem}</NameItem>

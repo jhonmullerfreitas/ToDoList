@@ -48,10 +48,11 @@ function ModalEditItem(props) {
         axios.patch(`http://localhost:3001/item/${idList}`, 
             data, 
             {
-            headers:{
+              headers:{
                 'Authorization':`Bearer ${token}`
+              }
             }
-        })
+        )
         .then((res)=> {
             setOpen(false)
         })

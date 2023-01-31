@@ -6,6 +6,7 @@ import NewList from "../pages/NewList";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import EditList from "../pages/EditList"
+import Profile from "../pages/Profile";
 
 function AppRoutes(){
     return(
@@ -16,6 +17,7 @@ function AppRoutes(){
             <Route path="/new-list" element={<NewList/>} />
             <Route path="/edit-list" element={<EditList/>} />
             <Route path="/all-lists" element={<AllLists/>} />
+            <Route path="profile" element={<Profile/>} />
         </Routes>
     )
 }
