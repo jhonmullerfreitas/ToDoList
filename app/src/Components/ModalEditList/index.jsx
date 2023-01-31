@@ -6,7 +6,6 @@ import Modal from '@mui/material/Modal';
 import EditIcon from '@mui/icons-material/Edit';
 import { ButtonSubmitEdit, FormEditNameList } from './styles';
 import TextField from '@mui/material/TextField';
-
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from 'yup';

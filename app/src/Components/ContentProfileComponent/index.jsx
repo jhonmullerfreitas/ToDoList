@@ -1,7 +1,7 @@
 import api from '../../Services/api';
-
+import Profile from "../../Assets/profile.png"
 import { useEffect, useState } from "react";
-import { BoxProfile, ButtonEditEmail, FormEditEmail } from "./styles";
+import { BoxImgProfile, BoxProfile, ButtonEditEmail, ContainerProfile, FormEditEmail } from "./styles";
 import TextField from '@mui/material/TextField';
 
 import { useForm } from "react-hook-form";
@@ -24,7 +24,6 @@ function ContentProfileComponent(){
     const token = window.localStorage.getItem("@token")
 
     const editEmail = (data) => {
-
         api.patch(
             `user/${idUser}`,
             data,
@@ -55,14 +54,19 @@ function ContentProfileComponent(){
 
     return(
         <>
-            <BoxProfile>
-                <p>Olá, {user.email}</p>
-                <FormEditEmail onSubmit={handleSubmit(editEmail)} >
-                    <TextField label="informe o novo email" size="small" {...register("email")} />
-                    <TextField type='password' label="informe a nova senha" size="small" {...register("password")} />
-                    <ButtonEditEmail type='submit' >Editar</ButtonEditEmail>
-                </FormEditEmail>
-            </BoxProfile>
+            <ContainerProfile>
+                <BoxImgProfile>
+                    <img src={Profile} />
+                </BoxImgProfile>
+                <BoxProfile>
+                    <p>Olá, {user.email}</p>
+                    <FormEditEmail onSubmit={handleSubmit(editEmail)} >
+                        <TextField label="informe o novo email" size="small" {...register("email")} />
+                        <TextField type='password' label="informe a nova senha" size="small" {...register("password")} />
+                        <ButtonEditEmail type='submit' >Editar</ButtonEditEmail>
+                    </FormEditEmail>
+                </BoxProfile>
+            </ContainerProfile>
         </>
     )
 }

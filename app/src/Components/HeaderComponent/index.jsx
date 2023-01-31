@@ -3,10 +3,8 @@ import { ContainerHeader,
     MenuHeaderUserLogged, 
     MenuHeaderUserNotLogged 
 } from "./styles";
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
-
 import smalLogo from "../../Assets/logo-todo-small.png"
 import logoutIcon from "../../Assets/log-out.png"
 import MenuLateral from "../MenuComponent";
@@ -18,7 +16,7 @@ function HeaderComponent(){
 
     const logoutFunction = () =>{
         window.localStorage.clear()
-        navigate("/login")
+        navigate("/")
     }
 
     useEffect(()=>{
@@ -39,7 +37,7 @@ function HeaderComponent(){
                 <ImgLogo src={smalLogo} />
                     <MenuHeaderUserLogged>
                         <ul>
-                            <li onClick={()=>navigate("/")}>Home</li>
+                            <li onClick={()=>navigate("/dashboard")}>Home</li>
                             <li onClick={()=>navigate("/all-lists")} >Listas</li>
                         </ul>
 
@@ -52,7 +50,7 @@ function HeaderComponent(){
             <ContainerHeader>
                 <ImgLogo src={smalLogo}  />
                 <MenuHeaderUserNotLogged>
-                    <li onClick={()=> navigate("/login")}>Login</li>
+                    <li onClick={()=> navigate("/")}>Login</li>
                     <li onClick={()=> navigate("/signup")} >Cadastrar</li>
                 </MenuHeaderUserNotLogged>
             </ContainerHeader>

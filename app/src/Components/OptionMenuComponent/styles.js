@@ -8,6 +8,7 @@ export const OptionMenuLateral = styled.button`
     border: 1px solid var(--white);
     background-color: transparent;
     color: var(--white);
+    margin-bottom: 10px;
 
     &:hover{
         background-color: var(--blue-2);

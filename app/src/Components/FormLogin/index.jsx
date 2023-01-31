@@ -3,7 +3,6 @@ import { BoxFormLogin, ButtonLogin, FormLoginInputs, SpanError } from './styles'
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from 'yup';
-
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom"
 import api from '../../Services/api';
@@ -44,7 +43,7 @@ function FormLogin(){
         const token = window.localStorage.getItem("@token")
         if(token){
             setUserLogged(true)
-            navigate("/")
+            navigate("/dashboard")
         }
     }, [userLogged])
 

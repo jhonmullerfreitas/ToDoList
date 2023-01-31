@@ -6,13 +6,12 @@ import OptionMenuComponent from "../OptionMenuComponent";
 import {useNavigate} from "react-router-dom"
 
 function MenuLateral(){
-
     const [drawerOpen, setDrawerOpen] = useState(false);
     const navigate = useNavigate()
 
     const logout = () =>{
         window.localStorage.clear()
-        navigate("/login")
+        navigate("/")
     }
 
     return(
@@ -57,7 +56,7 @@ function MenuLateral(){
                         <OptionMenuComponent option={"Todas as Listas"}  page={"/all-lists"}/>
                     </OptionsMenuLateral>
 
-                    <OptionMenuComponent option={"Sair"} page={"/login"} />
+                    <OptionMenuComponent option={"Sair"} page={"/"} />
                 </BoxMenuLateral>
             </Drawer>
         </>

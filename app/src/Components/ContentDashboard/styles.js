@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { device } from "../../styles/devices";
+import { device } from "../../styles/devices"
 
-export const ContainerProfile = styled.div`
+export const Content = styled.div`
     display: flex;
     flex-direction: column;
     height: 90vh;
@@ -11,61 +11,62 @@ export const ContainerProfile = styled.div`
     }
 `;
 
-export const BoxImgProfile = styled.div`
+export const BoxLogo = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh;
+    height: 40vh;
     background-color: var(--blue);
-
     img{
         height: 15vh;
     }
 
     @media ${device.tablet}{
-        height: 90vh;
         width: 50vw;
-
-        img{
-            height: 30vh;
-        }
+        height: 90vh;
     }
 `;
 
-export const BoxProfile = styled.div`
-    height: 60vh;
+export const BoxContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 50vh;
     color: var(--blue);
+    font-weight: 600;
 
     @media ${device.tablet}{
         width: 50vw;
         height: 90vh;
+
+        p{
+            font-size: 25px;
+        }
     }
+
 `;
 
-export const FormEditEmail = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 50vh;
-`;
-
-export const ButtonEditEmail = styled.button`
+export const ButtonCreateList = styled.button`
     height: 5vh;
-    width: 20vw;
+    width: 25vw;
     border: 1px solid var(--blue);
+    background-color: transparent;
     border-radius: 4px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: var(--blue);
 
     &:hover{
-        color: var(--white);
         background-color: var(--blue);
+        color: var(--white);
     }
 
-    @media ${device.tablet}{
+    @media ${device.mobileL}{
+        width: 15vw;
+    }
+
+     @media ${device.tablet}{
         width: 10vw;
     }
 `;

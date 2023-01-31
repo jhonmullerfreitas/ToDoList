@@ -1,14 +1,43 @@
 import styled from "styled-components";
-
 import { device } from "../../styles/devices";
+
+export const ContainerCreateList = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+
+    @media ${device.tablet}{
+        flex-direction: row;
+    }
+`;
+
+export const BoxImg = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 100vw;
+    background-color: var(--blue);
+    
+    img{
+        height: 20vh;
+    }
+
+    @media ${device.tablet}{
+        height: 90vh;
+    }
+`;
 
 export const BoxCreateList = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 90vh;
-
+    height: 40vh;
+    width: 100vw;
+    
     h3{
         color: var(--blue)
     }
