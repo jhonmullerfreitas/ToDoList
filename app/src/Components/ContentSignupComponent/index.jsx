@@ -3,8 +3,6 @@ import FormSignup from "../FormSignup";
 import { BoxBigLogo, BoxContentSignup } from "./styles";
 
 function ContentSignupComponent(){
-
-
     return(
         <BoxContentSignup>
             <BoxBigLogo>

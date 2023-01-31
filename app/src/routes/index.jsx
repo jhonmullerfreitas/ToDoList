@@ -11,8 +11,8 @@ import Profile from "../pages/Profile";
 function AppRoutes(){
     return(
         <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/login" element={<Login/>} />
+            <Route path="/dashboard" element={<Home/>} />
+            <Route path="/" element={<Login/>} />
             <Route path="/signup" element={<Signup/>} />
             <Route path="/new-list" element={<NewList/>} />
             <Route path="/edit-list" element={<EditList/>} />

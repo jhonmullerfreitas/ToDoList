@@ -7,9 +7,7 @@ export const ContainerHeader = styled.div`
     align-items: center;
     height: 10vh;
     width: 100vw;
-    
     background: var(--gradientBackground);
-
     filter: var(--boxShadowHeader);
 `;
 

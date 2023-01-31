@@ -2,15 +2,12 @@ import { OptionMenuLateral } from "./styles";
 import { useNavigate } from "react-router-dom"
 
 function OptionMenuComponent(props){
-
     const navigate = useNavigate()
-
     const redirect = (page) =>{
-        if(page === "/login"){
+        if(page === "/"){
             window.localStorage.clear();
             navigate(page)
         }
-
         navigate(page)
     }
 
